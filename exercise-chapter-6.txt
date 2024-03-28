@@ -1,0 +1,200 @@
+1. What is virtual DOM in React?
+    answer : Virtual DOM pada React adalah sebuah javascript object (virtual) yang merepresentasikan DOM yang sebenarnya (real DOM). DOM diperlukan oleh JavaScript untuk mengubah tampilan website secara dinamis. Pada React, setiap bagian dari UI adalah component, dan setiap component mempunyai state. React menggunakan konsep Observable Pattern dan mengamati setiap perubahan pada state. Ketika state pada sebuah component berubah, react mengupadate virtual DOM tree. Setelah virtual DOM diperbarui, React kemudian membandingkan versi sekarang virtual DOM dengan versi sebelumnya. Proses ini sering disebut dengan “diffing”. Setelah mengetahui object pada virtual DOM mana yang berubah maka hanya object tersebutlah yang akan dirubah pada real DOM. Proses seperti membuat performance aplikasi kita lebih baik.
+
+2. What Is JSX?
+    answer : JSX merupakan singkatan dari JavaScript Syntax Extension atau dikenal juga dengan Javascript XML. JSX adalah ekstensi React untuk Javasript. Sintaks JSX mirip seperti HTML, sehingga membuat kita lebih gampang menyusun elemen pada komponen React.
+
+3. Explain the steps to create a react application and print Hello World ?
+    answer :
+    - install react
+    - buka answer3.jsx
+    - npm run dev 
+
+4. How to Create Event in React ?
+    answer : answer-4.jsx
+
+5. Explain Props in React ?
+    answer : Props atau Properties adalah cara utama yang digunakan oleh komponen dalam React untuk berkomunikasi dan mentransfer data. bisa juga seperti atribut dalam tag html tetapi lebih fleksibel dan dinamis karena dapat berupa data dalam berbagai tipe, seperti string, array, objek, fungsi, dan bahkan komponen lainnya.
+    contoh : Props dipasarkan dari komponen induk (parent) ke komponen anak (child). Ini membantu membangun hubungan “single-direction data flow” atau aliran data satu arah, yang merupakan bagian penting dari paradigma pemrograman deklaratif yang dianut oleh React. [answer-5.jsx]
+
+6. What is higher-order component in React ?
+    answer : High Order Component (HOC) merupakan sebuah konsep atau teknik dengan logika didalamnya yang dapat digunakan kembali. HOC biasanya digunakan untuk menyusun komponen dengan perilaku bersama.
+
+7. Explain the difference between functional and class component 
+in React ?
+    answer :
+    - syntax (answer-7.jsx)
+    Komponen fungsional hanyalah fungsi JavaScript biasa yang menerima props sebagai argumen dan mengembalikan elemen React.
+    Komponen kelas mengharuskan Anda memperluas React.Component dan membuat fungsi render yang mengembalikan elemen React.
+
+8. What are hooks in React ?
+    answer : React Hooks diperkenalkan oleh React Team untuk melakukan state management dan side effects di dalam function component. Dengan Hooks kita bisa menggunakan state dan lifecycle methods tanpa harus menulis class di React.
+
+9. Explain the useState hook in React?
+    answer : [answer-9.jsx] useState adalah sebuah Hook yang memungkinkan Anda memberi state pada function components.
+
+10. Explain the “useEffect” hook in react?
+    answer : 
+    Dulu sebelum kita memakai yang namanya function component, kita pasti sudah terbiasa dengan namanya componentDidMount(), componentDidUpdate(), dan componentWillUnmount(). Tetapi dengan function component, kita hanya akan di berikan 1 fungsi untuk melakukan 3 hal itu dengan yang namanya useEffect. useEffect akan selalu di panggil pada render yang pertama, dan itu akan berlaku pada jenis effect apapun.
+
+11. What is prop drilling and its disadvantages?
+    answer : In React, components can pass data to their child components using props. Prop drilling is a technique used in React to pass data from a parent component down to its child components via props.
+    Kekurangannya:
+    Prop drilling can become a bad practice in larger and more complex React applications because it can lead to several issues, including:
+
+    1. Maintenance and readability issues: As the number of nested components grows, it can be challenging to understand where a prop is being used and passed down, making it harder to debug and maintain the code. The code can become more difficult to read, and changes can lead to cascading updates throughout the component hierarchy.
+    (mempersulit proses debug dan pemeliharaan code)
+
+    2. Reusability issues: When data is being passed down through many levels of components, it can make the components less reusable. Changes to the hierarchy or data can result in changes to multiple components, making the code harder to reuse and maintain.
+    (komponen tidak dapat digunakan kembali)
+
+    3. Performance issues: Passing large amounts of data down through multiple levels of components can impact the app’s performance, particularly if the data is changing frequently or is computationally expensive.
+    (dapat menurunkan performa aplikasi)
+
+    To avoid these issues, developers can use other patterns like React context or state management libraries like Redux or MobX to manage and share data across the component hierarchy without the need for prop drilling.
+
+
+12. Explain props and state in React with differences
+    answer: answer-12.jsx
+    Prop singkatan dari Property. 
+    Dalam pembuatannya, jika dalam functional component maka prop ini adalah parameternya. Jika componentnya dalam bentuk class maka prop ini property dari class nya yang di akses melalui keyword ‘this’. 
+
+    State adalah data private sebuah component. Data ini hanya tersedia untuk component tersebut dan tidak bisa di akses dari component lain. Component dapat merubah statenya sendiri.
+
+
+13. What is the use of ref in React?
+    answer: Ref menyediakan cara untuk mengakses simpul DOM atau elemen React yang dibuat dalam render method.
+    Refs adalah sebuah metode untuk mendapatkan properti-properti pada sebuah DOM, dengan menggunakan atribut (ref="").
+
+14. What is this.setState function in React?
+    answer: function setState() untuk mengubah objek status untuk memastikan bahwa komponen telah diperbarui dan memerlukan rendering ulang komponen.
+    atau juga mengubah/memperbarui status komponen secara langsung.
+
+
+15. What are benefits of using react-redux?
+    answer :
+    - ukuran yang ringan / Performa yang Baik
+    - state management yang lebih baik
+    - Redux bersifat maintainable atau dapat dipelihara
+    - Debugging yang mudah menggunakan Redux
+    - Kemudahan saat melakukan pengujian
+    - State yang persistent
+    - Memungkinkan untuk Rendering Sisi Server
+
+
+16. What is Redux ?
+    answer: Redux adalah salah satu library yang biasanya digunakan bersama reactjs dan javascript. Karena Redux adalah sebuah aplikasi state management, maka
+
+    Redux bekerja dengan cara membuat sebuah store yang berisi seluruh state pada aplikasi web. Dengan begitu, seluruh komponen pada aplikasi web akan menggunakan state yang sama dan dapat dengan mudah diakses.
+
+17. What are the problems that Redux solves ?
+    answer : ketika sebuah aplikasi/website sudah berkembang dan besar, serta memiliki banyak komponen yg menggunakan data yang sama dan harus berkomunikasi satu sama lain, 
+    maka diperlukan redux.
+    Redux membantu menghubungkan komponen dan memilih bagian yd diperlukan. membuat komunikasi antar komponen lebih mudah.
+
+18. What are the advantages of Redux in React ?
+    answer: 
+    centralized state management
+    predictable state updates
+    efficient component communication
+    scalability
+    benefits from a thriving ecosystem and community support
+
+    Dengan menggabungkan kekuatan ReactJS dan Redux, Anda dapat membangun aplikasi yang kuat, mudah dipelihara, dan dapat diskalakan dengan mudah.
+
+19. Explain the core principles of Redux ?
+    answer: Action Reducers Store
+    Action mewakili peristiwa yang mengirimkan data ke penyimpanan Redux.
+    Reducer mengambil keadaan saat ini dan, berdasarkan tindakan yang diterima, mengembalikan keadaan baru yang mencerminkan perubahan.
+    Store bertanggung jawab untuk menjaga status aplikasi. Di Redux, disarankan untuk hanya memiliki satu toko untuk seluruh aplikasi Anda.
+    
+    Redux berproses dengan cara mengirim actions secara synchronous, memperbarui state dengan fungsi root reducer dan memberi notifikasi ke UI kalau ada perubahan. 
+
+20. What is the difference between Redux and Context API ?
+    answer:
+    Perbedaan antara Context API dan Redux terletak pada cara mereka menangani perubahan status. Redux menggunakan pendekatan terpusat, di mana perubahan status dikelola di penyimpanan pusat. Di sisi lain, Context API menangani perubahan status pada tingkat komponen, yang terjadi dalam setiap komponen.
+
+    Context API adalah tambahan menarik pada dunia React. Ini menawarkan cara mudah untuk berbagi data di beberapa komponen tanpa perlu meneruskan props secara manual di setiap level. Fitur ini sangat membantu ketika Anda memiliki data yang perlu diakses secara global dalam pohon Komponen React. seperti preferensi tema atau bahasa pilihan.
+
+    Redux adalah pustaka JavaScript canggih yang menyediakan pendekatan terpusat untuk mengelola aliran data di aplikasi Anda. Ini dirancang untuk membantu Anda membangun aplikasi yang konsisten, dapat diuji, dan serbaguna yang dapat berjalan di lingkungan berbeda.
+
+21. What are the key components of Redux architecture ?
+answer :
+Action 
+Dispatcher
+Store
+Reducers 
+View
+
+22. What do you understand about Redux Toolkit ?
+answer: 
+Redux Toolkit adalah cara standar untuk menulis code redux
+Redux toolkit menyediakan package" untuk membangun aplikasi redux
+
+23. What is the significance of immutability in Redux ?
+answer :
+Menggunakan immutability memungkinkan kita menulis kode yang dpt dengan cepat mengetahui perubahan status tanpa perlu melakukan perbandingan rekursif pada data dan biasanya lebih cepat.
+
+
+24. What do you understand about Redux Toolkit ?
+answer:
+Redux Toolkit adalah cara standar untuk menulis code redux
+Redux toolkit menyediakan package" untuk membangun aplikasi redux
+
+
+25. What are actions in Redux ?
+answer :
+Action mewakili peristiwa yang mengirimkan data ke penyimpanan Redux.
+Action dikirim saat pengguna berinteraksi dengan aplikasi. Actions ini nantinya akan dikirim ke Store dengan cara store.dispatch(ADD_DATA). 
+
+
+26. What are reducers in Redux ?
+answer :
+Reducer mengambil keadaan saat ini dan, berdasarkan tindakan yang diterima, mengembalikan keadaan baru yang mencerminkan perubahan.
+Reducer adalah fungsi yang menerima action untuk mengubah state. 
+Fungsi root reducer dipanggil dengan state terkini dan action yang dikirim. 
+Root reducer dapat membagi tugas antara reducer yang lebih kecil, yang pada akhirnya mengembalikan state baru.
+
+    
+
+27. What are Store in Redux ?
+answer :
+Store bertanggung jawab untuk menjaga status aplikasi. 
+Store adalah yang memberitahu view, dengan menjalankan fungsi callback-nya. Store ini bertugas untuk:
+menyimpan keseluruhan state,
+mengakses state dengan cara getState(),
+menjalankan reducer untuk merubah state dengan cara dispatch (action).
+
+
+28. What is the purpose of the dispatch function in React Redux ?
+answer :
+Dispatch memungkinkan untuk mengirim actions untuk mengubah state aplikasi
+Dispatch function menerima objek yang mewakili tipe action yg ingin kita execute ketika dipanggil.
+Pada dasarnya, ia mengirimkan jenis action ke reducers untuk menjalankan tugasnya yg memperbarui status.
+
+29. Describe the role of middleware in Redux ? 
+answer :
+Middleware terletak di antara action dan reducer.
+Middleware menawarkan sarana untuk berkomunikasi dengan action yang dikirim sebelum mencapai reducer.
+
+middleware Redux menggunakan store's dispatch dan getState sebagai argumen dan mengembalikan fungsi lain yg menggunakan parameter berikutnya.
+middleware Redux menyediakan third-party extension  point
+antara dispatching sebuah action dan saat mencapai reducers.
+Biasanya digunakan untuk logging, crash reporting, berkomunikasi dengan API asinkron, routing dan lain2
+
+
+30. What is the difference between synchronous and asynchronous middleware in Redux ?
+answer:
+Middleware ini berfungsi sebagai jembatan penghubung beragam data. Middleware dapat berupa sebuah aplikasi tunggal, atau dapat juga berupa keseluruhan server. 
+Keunggulan Middleware : 
+    Memperindah sintaxs
+    Mempermudah proses testing
+
+Redux-thunk merupakan salah satu middleware yang bisa digunakan untuk Redux. 
+
+middleware sinkron pada redux
+proses yg dilakukan berurutan antara action ke reducer
+
+middleware asinkron pada redux
+proses yang bisa dilakukan secara kejar-kejaran antara action ke reducer
+Redux-thunk ini memungkinkan kita menulis logic asynchronous dalam berinteraksi dengan store. 
