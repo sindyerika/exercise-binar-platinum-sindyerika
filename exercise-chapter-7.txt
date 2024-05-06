@@ -1,0 +1,136 @@
+1. Apa perbedaan utama antara React Router v5 dan v6?
+answer :
+
+https://imnirmaljoshi.medium.com/upgrade-from-react-router-v5-to-react-router-v6-166b8aa1f12e
+
+
+No Need To Install “react-router-config” Separately
+
+react-router-config allowed us to define our routes as JavaScript objects, instead of React elements, and all its functionalities have now moved to the core react router v6.
+
+Use <Route element> instead of <Route children>
+
+The component that should be rendered on matching a route can not be written as children of the “Route component”, but it takes a prop called “element” where we have to pass a JSX component to be rendered. Another important reason for using the “element” prop in v6 is that <Route children> is reserved for nesting routes.
+
+
+2. Apa fungsi dari komponen <Routes> di React Router v6?
+answer :
+Komponen <Route>merupakan komponen terpenting dalam React Router. Ini merender beberapa UI jika lokasinya cocok dengan jalur rute saat ini. Idealnya, sebuah <Route>komponen harus memiliki prop bernama path, dan jika nama jalur cocok dengan lokasi saat ini, maka komponen tersebut akan dirender.
+
+Rute tingkat atas semuanya baik-baik saja, tetapi tidak lama lagi sebagian besar aplikasi harus mampu membuat rute-rute — misalnya, untuk menampilkan produk tertentu, atau untuk mengedit pengguna tertentu.
+
+Di React Router v6, rute disarangkan dengan menempatkan <Route>komponen di dalam <Route>komponen lain dalam kode JSX. Dengan cara ini, <Route>komponen yang disarangkan secara alami mencerminkan struktur URL yang disarangkan yang diwakilinya.
+
+3. Bagaimana cara mendefinisikan rute dasar di React Router v6?
+
+const root = ReactDOM.createRoot(
+  document.getElementById("root")
+);
+root.render(
+  <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<App />}>
+        <Route index element={<Home />} />
+        <Route path="teams" element={<Teams />}>
+          <Route path=":teamId" element={<Team />} />
+          <Route path="new" element={<NewTeamForm />} />
+          <Route index element={<LeagueStandings />} />
+        </Route>
+      </Route>
+      <Route element={<PageLayout />}>
+        <Route path="/privacy" element={<Privacy />} />
+        <Route path="/tos" element={<Tos />} />
+      </Route>
+      <Route path="contact-us" element={<Contact />} />
+    </Routes>
+  </BrowserRouter>
+);
+
+
+4. Apa itu nested routes di React Router v6 dan bagaimana cara menerapkannya?
+
+import { Rute , Rute , Tautan } dari 'react-router-dom' ;       
+
+const Aplikasi = ( ) => {     
+  kembali ( 
+    < >
+      <h1> Reaksi Router </h1>​​​
+
+      <nav>​​
+        < Tautan ke = " /home " > Beranda </ Tautan > 
+        < Tautan ke = " /pengguna " > Pengguna </ Tautan > 
+      </nav>​​
+
+      < Rute >
+        < Elemen indeks rute = { < Beranda /> } />    
+        < Jalur rute = elemen " rumah " = { ​​< Beranda /> } />    
+        < Jalur rute = elemen " pengguna " = { ​​< Pengguna /> ​​} />    
+        < Jalur rute = " * " elemen = { < NoMatch /> } />    
+      </ Rute >
+    </ >
+  ) ;
+} ;
+
+
+5. Apa fungsi dari hook useNavigate di React Router v6?
+Hook useNavigate adalah tambahan baru pada React Router 6. Ini merupakan pengganti hook useHistory dan useLocation di versi React Router sebelumnya. Hook useNavigate menyediakan API yang sederhana dan intuitif untuk bernavigasi antar halaman dalam aplikasi React Anda. Ini dirancang untuk digunakan dengan komponen dan kait fungsional, dan menyederhanakan proses penanganan perubahan URL di aplikasi Anda.
+
+npm instal reaksi-router-dom
+
+Anda kemudian dapat menggunakan useNavigatepengait di komponen fungsional Anda untuk bernavigasi antar halaman:
+
+impor { useNavigate } dari  'react-router-dom' ;
+function  Komponen Saya ( ) { 
+  const navigasi = useNavigate (); 
+
+  const  handleClick = ( ) => { 
+    navigasi ( '/halaman lain' ); 
+  }; 
+
+  return ( 
+    <button onClick={handleClick}>Buka halaman lain</button> 
+  ); 
+}
+
+Dalam contoh ini, kita menggunakan useNavigatehook untuk membuat navigatefungsi yang bisa kita gunakan untuk menavigasi ke halaman lain. Kami kemudian menggunakan fungsi ini dalam handleClickfungsi untuk menavigasi ke /other-pageURL ketika tombol diklik.
+
+6. Bagaimana cara melakukan redirect di React Router v6?
+answer :
+https://stackoverflow-com.translate.goog/questions/70403329/how-to-redirect-in-react-v6?noredirect=1&_x_tr_sl=en&_x_tr_tl=id&_x_tr_hl=id&_x_tr_pto=tc&lq=1
+
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+
+<BrowserRouter>
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/lab" element={<Lab />} />
+    <Route render={() => <Navigate to="/" />} />
+  </Routes>
+</BrowserRouter>
+
+
+
+7. Apa kegunaan dari useParams hook dalam React Router v6?
+React JS useParams Hook membantu mengakses parameter rute saat ini untuk mengelola rute dinamis di URL. Paket react-router-dom memiliki kait useParams yang memungkinkan Anda mengakses dan menggunakan parameter rute saat ini sesuai kebutuhan.
+
+useParams();
+
+https://www.geeksforgeeks.org/reactjs-useparams-hook/
+
+
+8. Bagaimana cara mengakses query string di React Router v6?
+
+We can get and set query strings with the useSearchParams hook.
+
+
+https://www.telerik.com/blogs/react-basics-how-to-use-react-router-v6
+
+
+9. Apa itu outlet di React Router v6 dan bagaimana penggunaannya?
+An <Outlet> should be used in parent route elements to render their child route elements. This allows nested UI to show up when child routes are rendered. If the parent route matched exactly, it will render a child index route or nothing if there is no index route.
+
+
+
+10. Bagaimana cara melindungi rute yang memerlukan autentikasi di React Router v6?
+
+https://www.robinwieruch.de/react-router-private-routes/

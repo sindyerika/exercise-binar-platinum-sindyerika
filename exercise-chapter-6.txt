@@ -25,6 +25,7 @@ in React ?
     answer :
     - syntax (answer-7.jsx)
     Komponen fungsional hanyalah fungsi JavaScript biasa yang menerima props sebagai argumen dan mengembalikan elemen React.
+    
     Komponen kelas mengharuskan Anda memperluas React.Component dan membuat fungsi render yang mengembalikan elemen React.
 
 8. What are hooks in React ?
@@ -36,6 +37,8 @@ in React ?
 10. Explain the “useEffect” hook in react?
     answer : 
     Dulu sebelum kita memakai yang namanya function component, kita pasti sudah terbiasa dengan namanya componentDidMount(), componentDidUpdate(), dan componentWillUnmount(). Tetapi dengan function component, kita hanya akan di berikan 1 fungsi untuk melakukan 3 hal itu dengan yang namanya useEffect. useEffect akan selalu di panggil pada render yang pertama, dan itu akan berlaku pada jenis effect apapun.
+
+untuk menggantikan lifecycle pada class komponen
 
 11. What is prop drilling and its disadvantages?
     answer : In React, components can pass data to their child components using props. Prop drilling is a technique used in React to pass data from a parent component down to its child components via props.
@@ -64,6 +67,7 @@ in React ?
 
 13. What is the use of ref in React?
     answer: Ref menyediakan cara untuk mengakses simpul DOM atau elemen React yang dibuat dalam render method.
+    hanya berlaku di komponen ref itu saja.
     Refs adalah sebuah metode untuk mendapatkan properti-properti pada sebuah DOM, dengan menggunakan atribut (ref="").
 
 14. What is this.setState function in React?
@@ -81,6 +85,11 @@ in React ?
     - State yang persistent
     - Memungkinkan untuk Rendering Sisi Server
 
+lebih terstruktur
+cocok untuk aplikasi dgn kompleksitas yg lebih gede
+
+tidak lebih cepat dideploy
+ada waktu yg dibayar
 
 16. What is Redux ?
     answer: Redux adalah salah satu library yang biasanya digunakan bersama reactjs dan javascript. Karena Redux adalah sebuah aplikasi state management, maka
@@ -103,6 +112,10 @@ in React ?
     Dengan menggabungkan kekuatan ReactJS dan Redux, Anda dapat membangun aplikasi yang kuat, mudah dipelihara, dan dapat diskalakan dengan mudah.
 
 19. Explain the core principles of Redux ?
+
+single state
+read only
+
     answer: Action Reducers Store
     Action mewakili peristiwa yang mengirimkan data ke penyimpanan Redux.
     Reducer mengambil keadaan saat ini dan, berdasarkan tindakan yang diterima, mengembalikan keadaan baru yang mencerminkan perubahan.
@@ -113,8 +126,14 @@ in React ?
 20. What is the difference between Redux and Context API ?
     answer:
     Perbedaan antara Context API dan Redux terletak pada cara mereka menangani perubahan status. Redux menggunakan pendekatan terpusat, di mana perubahan status dikelola di penyimpanan pusat. Di sisi lain, Context API menangani perubahan status pada tingkat komponen, yang terjadi dalam setiap komponen.
+    third party
+    state yg dimanage global
 
     Context API adalah tambahan menarik pada dunia React. Ini menawarkan cara mudah untuk berbagi data di beberapa komponen tanpa perlu meneruskan props secara manual di setiap level. Fitur ini sangat membantu ketika Anda memiliki data yang perlu diakses secara global dalam pohon Komponen React. seperti preferensi tema atau bahasa pilihan.
+    build in react
+    bersifat miner
+    antar komponen
+
 
     Redux adalah pustaka JavaScript canggih yang menyediakan pendekatan terpusat untuk mengelola aliran data di aplikasi Anda. Ini dirancang untuk membantu Anda membangun aplikasi yang konsisten, dapat diuji, dan serbaguna yang dapat berjalan di lingkungan berbeda.
 
@@ -134,7 +153,7 @@ Redux toolkit menyediakan package" untuk membangun aplikasi redux
 23. What is the significance of immutability in Redux ?
 answer :
 Menggunakan immutability memungkinkan kita menulis kode yang dpt dengan cepat mengetahui perubahan status tanpa perlu melakukan perbandingan rekursif pada data dan biasanya lebih cepat.
-
+pengguna data dalam reducer
 
 24. What do you understand about Redux Toolkit ?
 answer:
@@ -154,13 +173,15 @@ Reducer mengambil keadaan saat ini dan, berdasarkan tindakan yang diterima, meng
 Reducer adalah fungsi yang menerima action untuk mengubah state. 
 Fungsi root reducer dipanggil dengan state terkini dan action yang dikirim. 
 Root reducer dapat membagi tugas antara reducer yang lebih kecil, yang pada akhirnya mengembalikan state baru.
-
+isinya state
+tergantung apa yg kita kirim ke reducer
     
 
 27. What are Store in Redux ?
 answer :
 Store bertanggung jawab untuk menjaga status aplikasi. 
-Store adalah yang memberitahu view, dengan menjalankan fungsi callback-nya. Store ini bertugas untuk:
+Store adalah yang memberitahu view, dengan menjalankan fungsi callback-nya. 
+Store ini bertugas untuk:
 menyimpan keseluruhan state,
 mengakses state dengan cara getState(),
 menjalankan reducer untuk merubah state dengan cara dispatch (action).
