@@ -4,8 +4,6 @@ Autentikasi adalah proses validasi atau pembuktian terhadap identitas atau krede
 Autentikasi dilakukan untuk membuktikan bahwa pengguna yg hendak login merupkan pemilik akun yg sah.
 cth : penggunaan username dan password
 
-
-
 2. Sebutkan tiga faktor otentikasi yang umum digunakan.
 answer : 
 Tiga faktor otentikasi yang umum digunakan adalah:
@@ -14,11 +12,9 @@ Tiga faktor otentikasi yang umum digunakan adalah:
 2. Sesuatu yang Anda miliki: Ini bisa berupa token atau kartu pintar yang Anda miliki fisiknya.
 3. Sesuatu yang Anda adalah: Ini adalah otentikasi berdasarkan ciri biometrik, seperti sidik jari atau pemindaian wajah yang unik untuk Anda.
 
-
 3. Apa perbedaan antara otentikasi dua faktor dan otentikasi multifaktor?
 answer :
 Otentikasi dua faktor memerlukan dua cara berbeda untuk membuktikan identitas Anda, seperti kata sandi dan kode yang dikirimkan melalui SMS. Sementara otentikasi multifaktor memerlukan lebih dari dua cara untuk memverifikasi identitas, seperti kata sandi, kode SMS, dan sidik jari. Jadi, otentikasi multifaktor lebih fleksibel dan lebih aman karena lebih sulit bagi orang lain untuk mendapatkan akses tanpa izin.
-
 
 4. Apa itu Single Sign-On (SSO)?
 answer : Single Sign-On (SSO) adalah sebuah mekanisme otentikasi yang memungkinkan pengguna untuk mengakses beberapa aplikasi atau layanan dengan menggunakan satu set kredensial (seperti nama pengguna dan kata sandi) yang sama. Dengan kata lain, setelah pengguna berhasil login ke satu aplikasi atau sistem, mereka secara otomatis diotentikasi untuk mengakses aplikasi atau sistem lainnya tanpa perlu memasukkan kembali kredensial mereka.
@@ -54,6 +50,9 @@ answer :
 a. Mengimplementasikan Otentikasi Multifaktor (MFA)
 b. Mewajibkan pengguna untuk menggunakan kata sandi yang kuat dengan panjang yang mencukupi, campuran huruf besar dan kecil, angka, dan karakter khusus
 c. Menggunakan teknologi biometrik, seperti pemindaian sidik jari atau pemindaian wajah, sebagai faktor otentikasi tambahan dapat memperkuat keamanan sistem dengan mengandalkan karakteristik fisik unik dari individu.
+
+<hr>
+<br>
 
 1. Apa itu otorisasi?
 answer : Give users permission to access a resource.
@@ -189,6 +188,10 @@ Secara sederhana, ACL adalah seperti daftar nama yang memberi tahu sistem siapa 
 
 Dengan menggunakan ACL, administrator sistem dapat mengatur dan mengontrol akses ke berbagai sumber daya dalam sistem, sehingga memastikan bahwa hanya orang atau entitas yang diizinkan yang dapat mengakses atau mengubah sumber daya tersebut.
 
+
+<hr>
+<br>
+
 SLIDE 10
 
 1. Bagaimana otentikasi dan otorisasi bekerja bersama dalam keamanan sistem informasi?
@@ -233,16 +236,30 @@ answer : Salah satu cara sistem menangani perubahan kebijakan otorisasi tanpa me
 Dengan melakukan langkah-langkah di atas, sistem dapat mengelola perubahan kebijakan otorisasi dengan lebih mulus tanpa mengganggu pengguna atau mengganggu operasi normal organisasi.
 
 6. Apa pengaruh kegagalan sistem otentikasi terhadap proses otorisasi?
-answer :
+answer : Penolakan Akses, Mekanisme Penggantian, Akses Terbatas, Intervensi Manual, Risiko Keamanan
 
 7. Bagaimana implementasi kebijakan "zero trust" mempengaruhi otentikasi dan otorisasi?
-answer :
+answer : 
+Prinsip "zero trust" berarti bahwa tidak ada pengguna atau perangkat yang dipercaya secara otomatis, bahkan jika mereka berada di dalam jaringan organisasi. Sehingga
+
+Dalam kebijakan "zero trust", setiap permintaan akses harus diautentikasi, tidak peduli dari mana asalnya. Ini berarti bahwa setiap kali pengguna atau perangkat mencoba mengakses aplikasi, mereka harus membuktikan identitas mereka melalui proses otentikasi yang ketat.
+
+Kebijakan "zero trust" biasanya mendorong penggunaan otentikasi multifaktor (MFA), yang mengharuskan pengguna untuk memverifikasi identitas mereka menggunakan lebih dari satu metode (misalnya, kata sandi ditambah kode OTP dari ponsel).
 
 8. Apa dampak dari serangan keamanan pada sistem otentikasi dan otorisasi?
-answer :
+answer : 
+- Data Sensitif Terancam: Jika penyerang berhasil melewati otentikasi, mereka dapat mengakses data sensitif, termasuk informasi pribadi, keuangan, atau rahasia perusahaan.
+
+- Manipulasi Sistem: Penyerang dapat mengubah atau menghapus data, atau bahkan menanamkan malware yang dapat menyebabkan kerusakan lebih lanjut.
 
 9. Bagaimana teknologi blockchain dapat mempengaruhi otentikasi dan otorisasi?
-answer :
+answer : Manajemen Identitas Terdesentralisasi, 
+    Catatan Identitas yang Tidak Dapat Diubah, 
+    Tanda Tangan dan Pengesahan Digital, 
+    Protokol Otentikasi Terdesentralisasi, 
+    Kontrol Akses yang Diizinkan, 
+    Auditabilitas dan Transparansi, 
+    Interoperabilitas dan Portabilitas
 
 10. Apa peran administrator sistem dalam pengelolaan otentikasi dan otorisasi?
 answer :

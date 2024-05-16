@@ -3,62 +3,73 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-
+    <title>Exercise Wave 16</title>
     <style>
-      .bentuk {
-        margin-top: 2rem;
+      .container {
+        width: 800px;
+        height: 800px;
+        background-color: pink;
+        margin: auto;
         display: flex;
-        width: 400px;
-        height: 500px;
-        background: black;
-        border-radius: 0;
         justify-content: center;
-        align-items: center;
       }
-
       .lingkaran1 {
-        width: 50px;
-        height: 50px;
-        background-color: white;
-        border-radius: 50%;
-      }
-      .lingkaran2 {
-        width: 40px;
-        height: 40px;
-        background-color: orange;
-        border-radius: 50%;
-      }
-      .lingkaran3 {
-        width: 150px;
-        height: 150px;
-        background-color: orange;
-        border-radius: 100%;
-      }
-      .lingkaran4 {
         width: 70px;
         height: 70px;
-        background-color: white;
         border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 50px;
       }
-      .petak {
-        width: 170px;
-        height: 200px;
+      .lingkaran2 {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
         background-color: orange;
+        position: absolute;
+        top: 10px;
+        left: 10px;
+      }
+      .lingkaran3 {
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background-color: orange;
+
+        position: absolute;
+        top: 150px;
+        z-index: 1;
+      }
+
+      .lingkaran4 {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        top: 250px;
+        z-index: 2;
+      }
+      .kotak {
+        width: 400px;
+        height: 500px;
         border-radius: 0;
+        background-color: orange;
+        position: absolute;
+        top: 300px;
+        z-index: 0;
       }
     </style>
   </head>
   <body>
-    <div class="bentuk">
-      <div class="lingkaran1"></div>
-      <div class="lingkaran2"></div>
-
-      <div class="badan">
-        <div class="lingkaran3"></div>
-        <div class="lingkaran4"></div>
-        <div class="petak"></div>
+    <div class="container">
+      <div class="lingkaran1">
+        <div class="lingkaran2"></div>
       </div>
+
+      <div class="lingkaran3"></div>
+      <div class="lingkaran4"></div>
+      <div class="kotak"></div>
     </div>
   </body>
 </html>
